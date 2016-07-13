@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=" FILL ME IN ">
-    <meta name="author" content=" FILL ME IN ">
-    <title>Cameron Pittman: Portfolio</title>
+    <meta name="description" content="Katharinas front end portfolio">
+    <meta name="author" content="Katharina Kufieta">
+    <title>Katharina Kufieta: Portfolio</title>
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
@@ -26,40 +26,80 @@
   </head>
 
   <body>
-    <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
-      <p>Cameron Pittman<br><span>Course Developer</span></p>
+    <header class="container">
+      <div class="row">
+        <div class="col-xs-3 picture">
+            <picture>
+              <img
+                alt="Picture of Katharina"
+                src="img/profilepic-100-1x.jpg"
+                srcset="img/profilepic-100-1x.jpg 1x, img/profilepic-100-2x.jpg 2x">
+            </picture>
+        </div>
+        <div class="col-xs-9"><p>Katharina Kufieta<br><span>Software Engineer</span></p></div>
+      </div>
     </header>
 
     <div class="container">
       <div class="hero">
-        <strong>I love web development!</strong> This is a template for a simple portfolio. I decided to use it to showcase a few Udacity courses I've taken and some teaching work, but you can use it to showcase any kind of project that you want the world to see :) <br> Contact me: me@email.com
+        <strong>I love web development!</strong> This is a portfolio of my favorite front end projects. Take a look! <br> About me: &nbsp; <a href="https://www.linkedin.com/in/katharinakufieta">LinkedIn</a> &nbsp;<a href="https://github.com/KatharinaXeniaKufieta">Github</a>
       </div>
 
       <div class="content">
-        <ul>
-          <li>
-            <img src="https://lh4.ggpht.com/kJEnfqhPvtm4m3EneSZ4fWYGS8lW4YNhEjk6zPkyrQaBUHc-2Y_ElDic99NHI0h-UBLXVbRCjFybFvrWxdk=s100">
-            <a href="project-2048.html">Build Your Own 2048!</a>
-            <p>I made my own version of 2048. How cool is that!?</p>
+        <ul class="row">
+          <li class="col-xs-12">
+            <picture>
+              <img
+                alt="Picture of Katharinas bugs game"
+                src="src/img/bugs-100-1x.png"
+                srcset="src/img/bugs-100-1x.png 1x, img/bugs-100-2x.png 2x">
+            </picture>
+            <a href="project-2048.html">Arcade Game Bugs!</a>
+            <p>Bugs! is a variant of the arcade game Frogger. I practiced my JavaScript skills in this project.</p>
           </li>
 
-          <li>
-            <img src="https://lh6.ggpht.com/f_0W8h__3G99CWTjnMjD8BUKm7yp2-wJyApLtTwFoFtlal2ULf_JgHIsOQq2NiYfKOdMlXlMHDKNo5XVZLs=s100">
+          <li class="col-xs-12">
+            <picture>
+              <img
+                alt="Example picture of a seam found by the algorithms"
+                src="img/seams-100-1x.png"
+                srcset="img/seams-100-1x.png 1x, img/seams-100-2x.png 2x">
+            </picture>
+            <a href="project-mobile.html">Content Aware Resizing of Images (CARI)</a>
+            <p>I am implementing a web based application for content aware resizing of images. This is a long term project and work is still in progress.</p>
+          </li>
+
+          <li class="col-xs-12">
+            <picture>
+              <img
+                alt="Picture of my first portfolio website"
+                src="img/portfolio-100-1x.png"
+                srcset="img/portfolio-100-1x.png 1x, img/portfolio-100-2x.png 2x">
+            </picture>
+            <a href="views/pizza.html">My first portfolio website</a>
+            <p>This was my first front end project. I built a portfolio from scratch, based on a design mockup.</p>
+          </li>
+
+          <li class="col-xs-12">
+            <picture>
+              <img
+                alt="Picture of PageSpeed Insights giving results."
+                src="img/webperformance-100-1x.png"
+                srcset="img/webperformance-100-1x.png 1x, img/webperformance-100-2x.png 2x">
+            </picture>
             <a href="project-webperf.html">Website Performance Optimization</a>
-            <p>Hey... this class looks familiar.</p>
+            <p>This project was all about optimizing your website for speed and achieve a high score on PageSpeed Insights.</p>
           </li>
 
-          <li>
-            <img src="https://lh5.ggpht.com/IKdCmTWn8a2nMhlwMYzryvzRN5CUZAOBr4tDrEAbszV7TIFe9pRAInA4kkYcgTXwrifJsBEsq1agTueuu-g=s100">
-            <a href="project-mobile.html">Mobile Web Development</a>
-            <p>Making mobile apps isn't so hard after all.</p>
-          </li>
-
-          <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
-            <a href="views/pizza.html">Cam's Pizzeria</a>
-            <p>Who wants a performant pizza?</p>
+          <li class="col-xs-12">
+            <picture>
+              <img
+                alt="Picture of my first portfolio website"
+                src="img/pizzeria-100-1x.jpg"
+                srcset="img/pizzeria-100-1x.jpg 1x, img/pizzeria-100-2x.jpg 2x">
+            </picture>
+            <a href="views/pizza.html">Browser Rendering Optimization: Cam's Pizzeria</a>
+            <p>Given a poorly performing website, I made it run smoothly with 60 Frames per second. Don't burn your eyes!</p>
           </li>
         </ul>
       </div>
