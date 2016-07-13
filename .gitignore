@@ -1,2 +1,5 @@
 ngrok
 node_modules
+src/img_temp/
+**/*.swp
+*.swp
