@@ -60,6 +60,27 @@ module.exports = function(grunt) {
     }
    },
 
+    /* Extract critical CSS and inline it into the HTML file */
+    critical: {
+      test: {
+        options: {
+          base: './src/',
+          extract: true,
+          inline: true,
+          minify: true,
+          dimensions: [{
+            width: 320,
+            height: 500
+          }, {
+            width: 900,
+            height: 1300
+          }]
+        },
+        src: 'src/index.html',
+        dest: 'dist/index-critical.html'
+      }
+    },
+
     /* Minify JavaScript */
     uglify: {
       yourTask: {
@@ -116,26 +137,6 @@ module.exports = function(grunt) {
       },
     },
 
-    critical: {
-      test: {
-        options: {
-          base: './',
-          css: [
-            'src/css/style.css',
-          ],
-          dimensions: [{
-            width: 320,
-            height: 70
-          }, {
-            width: 900,
-            height: 1200
-          }]
-        },
-        src: 'src/index.html',
-        dest: 'dist/index-critical.html'
-      }
-    },
-
     /* Minify HTML files */
     htmlmin: {
       dist: {
@@ -146,7 +147,7 @@ module.exports = function(grunt) {
           minifyCSS: true
         },
         files: {
-          'dist/index.html': 'src/index.html'
+          'dist/index.html': 'dist/index-critical.html'
         }
       }
     }
