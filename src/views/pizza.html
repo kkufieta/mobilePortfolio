@@ -107,15 +107,12 @@
             <input id="sizeSlider" type="range" min="1" max="3" value="2" step="1" onchange="resizePizzas(this.value)"></input>
           </div>
         </div>
-        <div id="randomPizzas" class="row">
+        <div id="randomPizzas" class="row randomPizzas">
           <div id="pizza0" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
             <div style="width:35%">
-              <picture>
-                <img
-                  alt="Picture of a pizza"
-                  src="img/pizza-100-1x.png"
-                  srcset="img/pizza-100-1x.png 1x, img/pizza-100-2x.png 2x">
-              </picture>
+              <img class="img-responsive"
+                alt="Picture of a pizza"
+                src="img/pizza-100-1x.png">
             </div>
             <div style="width:65%">
               <h4>The Udacity Special</h4>
@@ -132,12 +129,9 @@
           </div>
           <div id="pizza1" class="randomPizzaContainer" style="width:33.33%; height: 325px;">
             <div style="width:35%">
-              <picture>
-                <img
-                  alt="Picture of a pizza"
-                  src="img/pizza-100-1x.png"
-                  srcset="img/pizza-100-1x.png 1x, img/pizza-100-2x.png 2x">
-              </picture>
+              <img class="img-responsive"
+                alt="Picture of a pizza"
+                src="img/pizza-100-1x.png">
             </div>
             <div style="width:65%">
               <h4>The Cameron Special</h4>
