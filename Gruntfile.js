@@ -22,6 +22,14 @@ module.exports = function(grunt) {
             suffix: ,
             quality:
             */
+            name: '300-1x',
+            width: '300px',
+            quality: 30
+          }, {
+            name: '300-2x',
+            width: '600px',
+            quality: 40
+          }, {
             name: '100-1x',
             width: '100px',
             quality: 30
@@ -41,6 +49,11 @@ module.exports = function(grunt) {
           src: ['*.{gif,jpg,png}'],
           cwd: 'src/img_src/',
           dest: 'src/img_temp/'
+        }, {
+          expand: true,
+          src: ['*.{gif,jpg,png}'],
+          cwd: 'src/views/img_src/',
+          dest: 'src/views/img_temp/'
         }]
       }
     },
@@ -56,6 +69,11 @@ module.exports = function(grunt) {
           src: ['*.{gif,jpg,png}'],
           cwd: 'src/img_temp/',
           dest: 'dist/img/'
+      }, {
+          expand: true,
+          src: ['*.{gif,jpg,png}'],
+          cwd: 'src/views/img_temp/',
+          dest: 'dist/views/img/'
       }]
     }
    },
@@ -76,8 +94,13 @@ module.exports = function(grunt) {
             height: 1300
           }]
         },
-        src: 'src/index.html',
-        dest: 'dist/index-critical.html'
+        files: [
+          {src: 'src/index.html', dest: 'src/critical_html/index-critical.html'},
+          {src: 'src/project-bugs.html', dest: 'src/critical_html/project-bugs-critical.html'},
+          {src: 'src/project-cari.html', dest: 'src/critical_html/project-cari-critical.html'},
+          {src: 'src/project-portfolio.html', dest: 'src/critical_html/project-portfolio-critical.html'},
+          {src: 'src/project-webperf.html', dest: 'src/critical_html/project-webperf-critical.html'},
+        ]
       }
     },
 
@@ -147,12 +170,17 @@ module.exports = function(grunt) {
           minifyCSS: true
         },
         files: {
-          'dist/index.html': 'dist/index-critical.html'
+          'dist/index.html': 'src/critical_html/index-critical.html',
+          'dist/project-bugs.html': 'src/critical_html/project-bugs-critical.html',
+          'dist/project-cari.html': 'src/critical_html/project-cari-critical.html',
+          'dist/project-portfolio.html': 'src/critical_html/project-portfolio-critical.html',
+          'dist/project-webperf.html': 'src/critical_html/project-webperf-critical.html',
+          'dist/views/pizza.html': 'src/views/pizza.html',
         }
       }
     }
   });
 
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'uglify', 'cssmin', 'imagemin', 'htmlmin:dist']);
-
+  grunt.registerTask('default', ['critical', 'uglify', 'cssmin', 'htmlmin:dist']);
+  grunt.registerTask('images', ['clean', 'mkdir', 'copy', 'responsive_images', 'imagemin']);
 };
