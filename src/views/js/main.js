@@ -438,6 +438,7 @@ var resizePizzas = function(size) {
         console.log("bug in sizeSwitcher");
     }
 
+    // Get the pizza elements and change their size
     var pizzaContainers = document.getElementsByClassName("randomPizzaContainer");
     var numberPizzaContainers = pizzaContainers.length;
     for (var i = 0; i < numberPizzaContainers; i++) {
@@ -455,9 +456,6 @@ var resizePizzas = function(size) {
 };
 
 window.performance.mark("mark_start_generating"); // collect timing data
-
-// var pizzaWorker = new Worker("generatePizzasWorker.js");
-// pizzaWorker.postMessage()
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
 function generatePizzas() {
@@ -501,14 +499,14 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var scrollTop = document.body.scrollTop;
+  // Precalculate the phase and save it in an array
   var phase = [];
-  var itemsBasicLeft = [];
   var numberItems = items.length;
   for (var i = 0; i < numberItems; i++) {
     phase[i] = 100 * (Math.sin((scrollTop / 1250) + (i % 5)));
   }
 
-  // Use translateX instead of style.left to improve performance
+  // Use style.transform instead of style.left to improve performance
   for (var i = 0; i < numberItems; i++) {
     items[i].style.transform = "translateX(" + phase[i] + "px)";
   }
