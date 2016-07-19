@@ -501,14 +501,13 @@ function updatePositions() {
   var scrollTop = document.body.scrollTop;
   // Precalculate the phase and save it in an array
   var phase = [];
-  var numberItems = items.length;
-  for (var i = 0; i < numberItems; i++) {
-    phase[i] = 100 * (Math.sin((scrollTop / 1250) + (i % 5)));
+  for (var i = 0; i < 5; i++) {
+    phase.push(100 * Math.sin(scrollTop / 1250 + i));
   }
 
   // Use style.transform instead of style.left to improve performance
-  for (var i = 0; i < numberItems; i++) {
-    items[i].style.transform = "translateX(" + phase[i] + "px)";
+  for (var i = 0, max = items.length; i < max; i++) {
+    items[i].style.transform = "translateX(" + phase[i%5] + "px)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.

@@ -33,6 +33,10 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  /* Enable hardware accelerated composition */
+  /* Chrome, Safari, Opera */
+  -webikit-backface-visibility: hidden; 
+  backface-visibility: hidden;
 }
 
 .randomPizzaContainer {
