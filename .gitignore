@@ -3,3 +3,4 @@ node_modules
 src/img_temp/
 **/*.swp
 *.swp
+src/critical_html
