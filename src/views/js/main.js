@@ -528,8 +528,20 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 60; i++) {
-    var elem = document.createElement('img');
+  // Calculate number of required pizzas:
+  // rows = window.height / s
+  // numberPizzas = rows * columns
+  // I don't really know why, but this formula gave me not enough
+  // pizzas to fill the screen. Double that number works though.
+  // To be honest, I did not really understand what s = 256 stands for,
+  // so this was impossible for me to debug. Dropping it, but leaving
+  // the comments for future reference.
+  // var height = window.screen.height;
+  // var numberPizzas = 2 * height / s * cols;
+  // console.log("numberPizzas: " + numberPizzas);
+  var elem;
+  for (var i = 0; i < 64; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "img/pizza-100-2x.png";
     elem.style.height = "100px";
