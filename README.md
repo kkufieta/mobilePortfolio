@@ -2,6 +2,8 @@
 
 This project was an exercise to hone my website performance optimization skills. Given an online portfolio I applied the techniques I learned in the [Udacity Website Performance Optimization course](https://www.udacity.com/course/ud884) to optimize the critical rendering path. The main page renders now quickly and achieves a score of 90+ on PageSpeed Insights. It links to a [Pizzeria](https://katharinaxeniakufieta.github.io/frontend-nanodegree-mobile-portfolio/views/pizza.html) website that had jank when resizing the pizzas and scrolling through the website. I optimized those animations, and the page runs now on 60 frames per second (FPS).
 
+View the app in this [Demo](https://kkufieta.github.io/mobilePortfolio/).
+
 ## Optimizations I've performed
 
 ###Part 1: Optimize PageSpeed Insights score for index.html
@@ -26,7 +28,10 @@ The project is setup with a **src** and **dist** folder which hold the source co
 
 Some useful tips to help you get started:
 
-1. Check out the repository
+1. Check out the repository by cloning the game with
+
+  `git clone https://github.com/kkufieta/mobilePortfolio.git`
+
 1. To inspect the site on your phone, you can run a local server
 
   ```bash
@@ -55,7 +60,6 @@ Some useful tips to help you get started:
   $> grunt
   ```
 
-
 ###Part 2: Optimize Frames per Second in pizza.html
 
 To optimize **views/pizza.html**, you will need to modify **views/js/main.js** until your frames per second rate is 60 FPS or higher. You will find instructive comments in **main.js**. 
@@ -80,3 +84,6 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+## Author
+The code is written by [Katharina Kufieta](https://www.linkedin.com/in/katharinakufieta).
